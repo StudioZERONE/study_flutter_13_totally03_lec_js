@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter_13_totally03_lec_js/webview_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,12 +32,17 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('')),
-      body: const Center(
-        child: Column(
-          children: [],
+      appBar: AppBar(title: const Text('Webview Sample')),
+      body: SafeArea(
+          child: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const WebviewPage()));
+          },
+          child: const Text('웹뷰 호출'),
         ),
-      ),
+      )),
     );
   }
 }
